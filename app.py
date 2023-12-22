@@ -14,6 +14,10 @@ class Todo(db.Model):
     content = db.Column(db.String(200), nullable=False)
     #bookeeping
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    
+    def __repr__(self):
+        #every time you make a new element, it returns a new Task and the id of the Task
+        return '<Task %r>' % self.id
 
 @app.route("/")
 def index():
