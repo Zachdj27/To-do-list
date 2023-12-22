@@ -6,12 +6,21 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
+def create_app():
+    app = Flask(__name__)
+
+    with app.app_context():
+        init_db()
+
+    return app
+
 class Todo(db.Model):
     #id of each entry
     id = db.Column(db.Integer, primary_key=True)
     #content holds each task
     #nullable=False to disable creating empty task
     content = db.Column(db.String(200), nullable=False)
+    completed = db.Column(db.Integer, default = 0)
     #bookeeping
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     
