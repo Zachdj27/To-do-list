@@ -52,6 +52,13 @@ def delete(id):
         return redirect('/')
     except:
         return 'There was a problem deleting that Task'
+    
+@app.route('/update/<int:id>', methods=["GET", "POST"])
+def update(id):
+    if request.method == "POST":
+        pass
+    else:
+        return render_template("update.html")
 
 
 if __name__ == "__main__":
