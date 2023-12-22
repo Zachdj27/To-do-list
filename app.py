@@ -9,9 +9,6 @@ db = SQLAlchemy(app)
 def create_app():
     app = Flask(__name__)
 
-    with app.app_context():
-        init_db()
-
     return app
 
 class Todo(db.Model):
@@ -20,6 +17,7 @@ class Todo(db.Model):
     #content holds each task
     #nullable=False to disable creating empty task
     content = db.Column(db.String(200), nullable=False)
+    #when task is complete
     completed = db.Column(db.Integer, default = 0)
     #bookeeping
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
@@ -28,7 +26,7 @@ class Todo(db.Model):
         #every time you make a new element, it returns a new Task and the id of the Task
         return '<Task %r>' % self.id
 
-@app.route("/")
+@app.route("/", methods=['POST', 'GET'])
 def index():
     return render_template("index.html")
 
