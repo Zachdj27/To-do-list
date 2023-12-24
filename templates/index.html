@@ -18,7 +18,7 @@
         <div class="add-task">
 
             <div class="input-wrapper">
-                <input type='text' name="content" id='content' required ></input>
+                <input type='text' name="content" id='content'>
                 <label 
                        for='input' 
                        class='placeholder'>
@@ -28,6 +28,7 @@
 
             <input class="add-task-button" type="submit" value="Add">
         </div>
+    </form>
 
     {% if tasks|length < 1 %}
     <h4>Your task list is empty</h4>
@@ -42,23 +43,28 @@
         {% for task in tasks %}
             <tr>
                 <!--return content of each task-->
-                <td>{{ task.content }}</td>
+                <td>
+                    <input class="checkbox" type="checkbox">
+                    <label "checkbox-content">{{ task.content }}</label>
+                </td>
                 <!--return date of each task without the time-->
                 <td>{{ task.date_created.date() }}</td>
                 <td>
-                    <a href="/delete/{{task.id}}">
-                        <button class="delete-button">
-                            <span class="material-symbols-outlined">
-                            delete
-                            </span>
-                    </button>
-                    </a>
-                    <br>
-                    <a href ="/update/{{task.id}}">
-                        <button class="modify-button">
-                        Modify
-                        </button>
-                    <a>
+                    <div class="action-buttons">
+                        <a href="/delete/{{task.id}}">
+                            <button class="delete-button">
+                                <span class="material-symbols-outlined">
+                                delete
+                                </span>
+                            </button>
+                        </a>
+                        <br>
+                        <a href ="/update/{{task.id}}">
+                            <button class="modify-button">
+                            Modify
+                            </button>
+                        <a>
+                    </div>
                 </td>
             </tr>
     {% endfor %}

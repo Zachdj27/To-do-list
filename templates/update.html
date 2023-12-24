@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Task Master</title>
+<title>TaskNote</title>
 {% endblock %}
 
 {% block body %}
@@ -12,7 +12,7 @@
     <form action="/update/{{task.id}}" method="POST">
         <div class="add-task">
             <div class="input-wrapper">
-                <input class="update-input" type="text" name="content" id="content" value="{{task.content}}" required>
+                <input class="update-input" type="text" name="content" id="content" value="{{task.content}}">
             </div>
             <input class="update-task-button" type="submit" value="Update">
         </div>

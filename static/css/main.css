@@ -1,6 +1,6 @@
 body{
     font-family:Sarabun;
-    background-color: #4cc9f0;
+    background-color:#4cc9f0
 }
 
 h1, h4{
@@ -8,6 +8,9 @@ h1, h4{
     color:white;
 }
 
+
+
+/*Adding task section*/
 .add-task{
   margin: auto;
   display: flex;
@@ -32,6 +35,7 @@ h1, h4{
   font-family: Sarabun;
   color: white;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .add-task-button{
@@ -66,16 +70,17 @@ padding: 0 4px;
 transition: all 0.2s ease-in;
 }
 
-input:is(:focus, :valid) {
+input:is(:focus) {
 border: 1.5px solid var(--focus-color);
 }
 
-input:is(:focus, :valid) + .placeholder {
+input:is(:focus) + .placeholder {
 transform: translatey(calc(-1 * var(--padding) - 12px));
 font-size: 14px;
 color: var(--focus-color);
 }
 
+/*task list*/
 table {
   margin: auto;
   border-collapse: collapse;
@@ -87,6 +92,24 @@ td, th {
   text-align: left;
   padding: 8px;
 }
+
+.checkbox{
+  padding: none;
+  width: 20px;
+  height: 15px;
+  cursor:pointer;
+  align-items: top;
+}
+
+input[type=checkbox]:checked + label {
+  color:black;
+  text-decoration: line-through;
+}
+
+input[type=checkbox]:checked{
+  accent-color: #3ea7c6;
+}
+
   
 th{
   font-weight: 500;
@@ -100,10 +123,42 @@ tr:nth-child(odd){
   background-color: white;
 }
 
+.action-buttons{
+  display:flex;
+  align-items: top;
+}
+
+.delete-button, .modify-button{
+  margin-right: 7px;
+  background-color:#4cc9f0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+.modify-button{
+  height: 30px;
+  font-weight: 500;
+}
+
+/*Update section*/
 .update-input{
   font-size:14px;
 }
 
 .update-task-button{
   width: 50px
+}
+
+/*Update section*/
+.delete-button:hover, .modify-button:hover, .add-task-button:hover, .update-task-button:hover{
+  transition: 0.15s;
+  opacity: 70%;
+}
+
+.delete-button:active, .modify-button:active, .add-task-button:active, .update-task-button:active{
+  transition: 0.15s;
+  opacity: 40%;
 }
