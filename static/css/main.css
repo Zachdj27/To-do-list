@@ -1,10 +1,14 @@
 body{
-    font-family:sans-serif;
+    font-family:Sarabun;
+    background-color: #4cc9f0;
 }
 
-h1{
+h1, h4{
     text-align: center;
+    color:white;
 }
+
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -21,5 +25,33 @@ table {
     background-color: #dddddd;
   }
 
-  
+.task-input{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    height: 60px;
+    width: 300px;
+    background-color: white;
+    border-radius: 3px;
+
+}
+
+.input-box, .add-task-button{
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(179, 173, 173);
+    border-radius: 3px;
+    height: 25px;
+}
+
+.add-task-button{
+    background-color: #4cc9f0;
+    border: None;
+    font-family: Sarabun;
+    color: white;
+    font-weight: 500;
+}
+
+
   

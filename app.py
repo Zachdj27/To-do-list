@@ -15,7 +15,6 @@ class Todo(db.Model):
     #id of each entry
     id = db.Column(db.Integer, primary_key=True)
     #content holds each task
-    #nullable=False to disable creating empty task
     content = db.Column(db.String(200), nullable=False)
     #when task is complete
     completed = db.Column(db.Integer, default = 0)
@@ -32,12 +31,16 @@ def index():
         task_content = request.form['content']
         new_task = Todo(content=task_content)
         
-        try:
-            db.session.add(new_task)
-            db.session.commit()
-            return redirect('/')
-        except:
-            return "There was an issue adding you task"
+        #check if content is not empty or just spaces
+        if task_content.strip() != "":
+            try:
+                db.session.add(new_task)
+                db.session.commit()
+                return redirect('/')
+            except:
+                return "There was an issue adding you task"
+        else:
+            return redirect("/")
     else:
         tasks= Todo.query.order_by(Todo.date_created).all()
         return render_template("index.html", tasks=tasks)
