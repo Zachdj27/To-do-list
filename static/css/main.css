@@ -10,9 +10,9 @@ h1, h4{
 
 
 table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    font-weight: 500;
   }
   
   td, th {
@@ -25,27 +25,26 @@ table {
     background-color: #dddddd;
   }
 
-.task-input{
+.add-task{
     margin: auto;
     display: flex;
     justify-content: center;
     align-items:  center;
-    height: 60px;
-    width: 300px;
+    height: 80px;
+    width: 330px;
     background-color: white;
-    border-radius: 3px;
+    border-radius: 6px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 
-}
-
-.input-box, .add-task-button{
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(179, 173, 173);
-    border-radius: 3px;
-    height: 25px;
 }
 
 .add-task-button{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    height: 25px;
+    width: 40px;
     background-color: #4cc9f0;
     border: None;
     font-family: Sarabun;
@@ -54,4 +53,38 @@ table {
 }
 
 
-  
+.input-wrapper {
+  --padding: 16px;
+  --focus-color: black;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  padding: var(--padding);
+  border: 1.5px solid gray;
+  outline: none;
+  border-radius: 6px;
+  margin-right: 4px;
+  font-size: 14px;
+  width:200px;
+}
+.placeholder {
+  position: absolute;
+  background-color: white;
+  color: gray;
+  left: var(--padding);
+  padding: 0 4px;
+  transition: all 0.2s ease-in;
+}
+
+input:is(:focus, :valid) {
+  border: 1.5px solid var(--focus-color);
+}
+
+input:is(:focus, :valid) + .placeholder {
+  transform: translatey(calc(-1 * var(--padding) - 12px));
+  font-size: 14px;
+  color: var(--focus-color);
+}
