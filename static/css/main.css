@@ -8,83 +8,102 @@ h1, h4{
     color:white;
 }
 
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    font-weight: 500;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-
 .add-task{
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items:  center;
-    height: 80px;
-    width: 330px;
-    background-color: white;
-    border-radius: 6px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+  height: 80px;
+  width: 330px;
+  background-color: white;
+  border-radius: 6px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
 }
 
+.add-task-button, .update-task-button{
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  height: 25px;
+  background-color: #4cc9f0;
+  border: None;
+  font-family: Sarabun;
+  color: white;
+  font-weight: 500;
+}
+
 .add-task-button{
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 4px;
-    height: 25px;
-    width: 40px;
-    background-color: #4cc9f0;
-    border: None;
-    font-family: Sarabun;
-    color: white;
-    font-weight: 500;
+  width: 40px;
 }
 
 
 .input-wrapper {
-  --padding: 16px;
-  --focus-color: black;
-  position: relative;
-  display: flex;
-  align-items: center;
+--padding: 16px;
+--focus-color: black;
+position: relative;
+display: flex;
+align-items: center;
 }
 
-input {
-  padding: var(--padding);
-  border: 1.5px solid gray;
-  outline: none;
-  border-radius: 6px;
-  margin-right: 4px;
-  font-size: 14px;
-  width:200px;
+input{
+padding: var(--padding);
+border: 1.5px solid gray;
+outline: none;
+border-radius: 6px;
+margin-right: 4px;
+font-size: 14px;
+width:200px;
 }
+
 .placeholder {
-  position: absolute;
-  background-color: white;
-  color: gray;
-  left: var(--padding);
-  padding: 0 4px;
-  transition: all 0.2s ease-in;
+position: absolute;
+background-color: white;
+color: gray;
+left: var(--padding);
+padding: 0 4px;
+transition: all 0.2s ease-in;
 }
 
 input:is(:focus, :valid) {
-  border: 1.5px solid var(--focus-color);
+border: 1.5px solid var(--focus-color);
 }
 
 input:is(:focus, :valid) + .placeholder {
-  transform: translatey(calc(-1 * var(--padding) - 12px));
-  font-size: 14px;
-  color: var(--focus-color);
+transform: translatey(calc(-1 * var(--padding) - 12px));
+font-size: 14px;
+color: var(--focus-color);
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 70%;
+}
+  
+td, th {
+  border: 2px solid #c3c3c3;
+  text-align: left;
+  padding: 8px;
+}
+  
+th{
+  font-weight: 500;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+tr:nth-child(odd){
+  background-color: white;
+}
+
+.update-input{
+  font-size:14px;
+}
+
+.update-task-button{
+  width: 50px
 }

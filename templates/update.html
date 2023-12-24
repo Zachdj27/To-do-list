@@ -10,8 +10,12 @@
 
 
     <form action="/update/{{task.id}}" method="POST">
-        <input class="input-box" type="text" name="content" id="content" value="{{task.content}}">
-        <input class="add-task-button" type="submit" value="Add Task">
+        <div class="add-task">
+            <div class="input-wrapper">
+                <input class="update-input" type="text" name="content" id="content" value="{{task.content}}" required>
+            </div>
+            <input class="update-task-button" type="submit" value="Update">
+        </div>
 </div>
 
 {% endblock %}
