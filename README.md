@@ -21,4 +21,4 @@ A simple to-do list web app.
   - You can delete a task by clicking the trash icon and it will erase it from the database
 
 ## How The Web App Looks
-![](screenshot/homeimage)
+![](screenshot/homeimage.png)
