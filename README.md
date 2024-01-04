@@ -2,9 +2,11 @@
 A simple to-do list web app.
 
 ## How to get started
-1. Go to https://task-note-6ed393d157fd.herokuapp.com
-2. In the "Add Task" bubble, add a task
-3. When you're done with a task cross it off or delete it!
+1. Either fork or download the app and open the folder in the cli
+2. Make sure you have the downloaded Flask, flaskSQLAlchemy and LoginManager
+3. Start the app
+4. Add a Task in the task text bubble
+5. When you're done with a task cross it off or delete it!
 
 ## Features
 - Adding a Task
